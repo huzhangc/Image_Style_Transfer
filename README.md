@@ -23,8 +23,12 @@ Those two notebooks are originally run on Colab so some path should be adjust if
 Images required to run those two notebooks are included in the images folders in this repo. Pre-trained models for Real_Time_Transfer are included in the models folders. 
 
 ## Evaluation
-*Real-time Style Transfer
+* Real-time Style Transfer
 
+I performed grid search on hyperparameters: style weights = 0.01, 1 ,100000 and content weights = 0.01, 1, 100000.Due to time limitation on training the model, I train each model for only 1 epoch. Based on my comparison with the result of training 2 eooch, the image quality and average losses has only a little difference. The results of my hyperparameter tuning is shown below as a dataframe that sort each trials in ascending order of total loss function. 
+<img width="809" alt="hyperparameter_tuning_result_table" src="https://github.com/huzhangc/Image_Style_Transfer/assets/89945246/06186dba-ea84-4ea5-827c-289dbe554b47">
+After examining the outputimages, I found that having a small total loss does not ensure the model is going to yeild good quality images. Larger style or conents weights will result in larger losses style or content loss and thus larger total loss. A small style and content weight may be too insignificant to have an impact on transfering images and the ouput images will have little meaning content or style.Hyperparameter with content weight of 1 and feature weight of 100000 produce the overall best image. A content weight that is smaller than 1 or feature weight greater than 100000 may result in unrecognizable content, and a content that is greater than 1 with a smaller feature weight may result in more assemblance on the original content images and less artisitc style. Below is a sample of image outputs with various hyperparamters. 
+<img width="276" alt="hyperparameter_tuning_images" src="https://github.com/huzhangc/Image_Style_Transfer/assets/89945246/5cb7d389-74af-4703-be3d-8728db71b6aa">
 
 
 Real-time style transfer has pretty robust performance on different types of content images: landscape, objects, potraits, light, etc. The output images are clear and recognizable. No unusual twists or fragmentation appear in the transfered images. The time for generating the images is fast, with an average around 1.5 seconds.
