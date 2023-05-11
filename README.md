@@ -15,10 +15,12 @@ In this project, we aim to examine and evaluate 2 popular algorithms of image st
 This repo contains the 2 google colab notebook, and we suggesting using GPU to execute those notebooks.
 
 * Neural_Style_Transfer.ipynb 
+
 too large to display on github, please check the link https://colab.research.google.com/drive/10gX0DWH6fiPZtMeV4n3jHxs_m6yM_0M7#scrollTo=d0XBbgX94imG
 or download the .ipynb file directly.
 
 * Real_Time_Transfer.ipynb
+
 In Real_Time_Transfer.ipynb, the file documented the whole process of uploading& preprocessing data, implementing and training the image transformation network with the pretrained vgg16 network, hyperparameter tuning on style weights and training weights, performing image style transfer on content images and outputing the result images and losses. Model of each epoch and trials are saved.(As you can find in Model) 
 
 The content_image and style_images folders contains image needed to execute the codes.
@@ -29,16 +31,21 @@ Images required to run those two notebooks are included in the images folders in
 
 ## Evaluation
 ### Neural Style Transfer
+#### Hyperparameter Tuning
 I performed grid search on hyperparameters
 style_weight = [1e-2,1,1e2,1e4,1e6]
 content_weight = [1e-2,1,1e2,1e4,1e6]
 total_variation_weight = [1,100,10000]
 for total 75 trials.
-The results of my hyperparameter tuning is shown below as a dataframe that sort each trials in ascending order of total loss function. 
+The results of my hyperparameter tuning is shown below as a dataframe that sort each trials in ascending order of total loss function.
+
 <img width="958" alt="image" src="https://github.com/huzhangc/Image_Style_Transfer/assets/98297644/3300dac9-6c59-433a-bc64-bf47ae99db3b">
+
 I choose hyperparameter also according to the visual performance of the output. Thus, I choose hyperparameter with style_weight 1e-2, content_weight = 1e-4 and total_variation_weight = 100. Below is a sample of hyperparameter tuning results (best trial on lower right).
+
 <img width="312" alt="image" src="https://github.com/huzhangc/Image_Style_Transfer/assets/98297644/d08bdbc6-34ce-4ea7-b493-2c70545d14d4">
 
+#### Image Evaluation
 Neural Style Transfer presents stylistic outputs, with colors and textures on style images and scnenes & objects on content images greatly preserved. The results are artistic and beautiful, despite high noise and twisted details. Also note that it have poor performance if there's white areas on the content image.
 Below are photo evaluations. For generating these images, I trained the model with style weight of 1e-2, content weight of 1e4 and total variation weight of 100, which are the best hyperparameters after examining outputs from hyperparameter tuning, with an epoch size of 10, which os roughly 1000 iterations. 
 
@@ -48,7 +55,7 @@ Below are photo evaluations. For generating these images, I trained the model wi
 
 
 ### Real-time Style Transfer
-
+#### Hyperparameter Tuning
 I performed grid search on hyperparameters: style weights = 0.01, 1 ,100000 and content weights = 0.01, 1, 100000. Due to time limitation on training the model, I train each model for only 1 epoch. Based on my comparison with the result of training 2 eooch, the image quality and average losses has only a little difference. The results of my hyperparameter tuning is shown below as a dataframe that sort each trials in ascending order of total loss function. 
 
 <img width="809" alt="hyperparameter_tuning_result_table" src="https://github.com/huzhangc/Image_Style_Transfer/assets/89945246/06186dba-ea84-4ea5-827c-289dbe554b47">
@@ -57,7 +64,7 @@ After examining the output images, I found that having a small total loss does n
 
 <img width="276" alt="hyperparameter_tuning_images" src="https://github.com/huzhangc/Image_Style_Transfer/assets/89945246/5cb7d389-74af-4703-be3d-8728db71b6aa">
 
-
+#### Image Evaluation
 Real-time style transfer has pretty robust performance on different types of content images: landscape, objects, potraits, light, etc. The output images are clear and recognizable. No unusual twists or fragmentation appear in the transfered images. The time for generating the images is fast, with an average around 1.5 seconds.
 For generating these images, I trained the model with style weight of 100000 and content weight of 1, which is the best hyperparameter after examining outputs from hyperparameter tuning, with an epoch size of 2, which os roughly 40000 iterations. 
 <img width="1044" alt="City_transfer_result" src="https://github.com/huzhangc/Image_Style_Transfer/assets/89945246/a4e2b2c9-aeba-4aea-9ca8-d9669a449d0b">
