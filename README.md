@@ -25,11 +25,15 @@ Images required to run those two notebooks are included in the images folders in
 ## Evaluation
 *Real-time Style Transfer
 
-Real-time style transfer has pretty robust performance on different types of content images: landscape, objects, potraits, light, etc. The output images are clear and recognizable. No unusual twists or fragmentation appear in the transfered images. The time for generating the images is fast, with an average around 1.5 seconds. 
+
+
+Real-time style transfer has pretty robust performance on different types of content images: landscape, objects, potraits, light, etc. The output images are clear and recognizable. No unusual twists or fragmentation appear in the transfered images. The time for generating the images is fast, with an average around 1.5 seconds.
+For generating these images, I trained the model with style weight of 100000 and content weight of 1, which is the best hyperparameter after examining outputs from hyperparameter tuning, with an epoch size of 2, which os roughly 40000 iterations. 
 <img width="1044" alt="City_transfer_result" src="https://github.com/huzhangc/Image_Style_Transfer/assets/89945246/a4e2b2c9-aeba-4aea-9ca8-d9669a449d0b">
-<img width="1046" alt="Beach_transfer_result" src="https://github.com/huzhangc/Image_Style_Transfer/asset<img width="1042" alt="Screen Shot 2023-05-11 at 12 58 21 AM" src="https://github.com/huzhangc/Image_Style_Transfer/assets/89945246/5919cd0a-55ef-4b17-a918-5234c90cbdc4">
-<img width="1039" alt="Screen Shot 2023-05-11 at 1 01 50 AM" src="https://github.com/huzhangc/Image_Style_Transfer/assets/89945246/a7bf8520-39fd-45d6-a56f-08cbefc46fa0">
+<img width="1041" alt="sea_transfer_result" src="https://github.com/huzhangc/Image_Style_Transfer/assets/89945246/1d727f9e-0f57-4164-84d1-58983b8d40fd">
+<img width="1039" alt="portrait_transfer_result" src="https://github.com/huzhangc/Image_Style_Transfer/assets/89945246/a7bf8520-39fd-45d6-a56f-08cbefc46fa0">
 <img width="1045" alt="sunset_transfer_result" src="https://github.com/huzhangc/Image_Style_Transfer/assets/89945246/823e4ed3-a141-4459-b1e9-baa794dec81e">
 <img width="1048" alt="arch_transfer_result" src="https://github.com/huzhangc/Image_Style_Transfer/assets/89945246/9e7e13a2-3366-4f51-bd62-ab7c95c741eb">
+
 
 
