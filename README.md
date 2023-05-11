@@ -16,10 +16,10 @@ This repo contains the 2 google colab notebook, and we suggesting using GPU to e
 * Neural_Style_Transfer.ipynb
 * Real_Time_Transfer.ipynb
 
-In Real_Time_Transfer.ipynb, the file documented the whole process of uploading& preprocessing data, training and implementing the image transformation network with the pretrained vgg16 network, hyperparameter tuning on style weights and training weights, performing image style transfer on content images and outputing the results. Model of each epoch and trials are saved.(As you can find in Model) 
+In Real_Time_Transfer.ipynb, the file documented the whole process of uploading& preprocessing data, implementing and training the image transformation network with the pretrained vgg16 network, hyperparameter tuning on style weights and training weights, performing image style transfer on content images and outputing the result images and losses. Model of each epoch and trials are saved.(As you can find in Model) 
 
 ## Example commands to execute the code
-Those two notebooks are originally run on Colab so some path should be adjust if you want to run it locally.
-Images required to run those two notebooks are included in the images folders in this repo.
+Those two notebooks are originally run on Colab so some path should be adjust if you want to run it locally. Please follow the instructions on the ipynb files to set up the environment and required dataset. 
+Images required to run those two notebooks are included in the images folders in this repo. Pre-trained models for Real_Time_Transfer are included in the models folders. 
 
 ## Evaluation
